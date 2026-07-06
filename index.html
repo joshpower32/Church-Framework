@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAVEN Church — James Street North | Hamilton, ON</title>
+    <meta name="description" content="A church in the heart of Hamilton since 1912. Sundays at 9 &amp; 11 — honest teaching, real community, kids and youth at every service. Come as you are.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://images.pexels.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Church",
+      "name": "HAVEN Church",
+      "foundingDate": "1912",
+      "telephone": "+1-905-555-1912",
+      "email": "hello@havenchurch.ca",
+      "address": { "@type": "PostalAddress", "streetAddress": "210 James St N", "addressLocality": "Hamilton", "addressRegion": "ON", "postalCode": "L8R 2L2", "addressCountry": "CA" },
+      "event": [
+        { "@type": "Event", "name": "Sunday Gathering", "startDate": "2026-01-04T09:00", "eventSchedule": { "@type": "Schedule", "byDay": "https://schema.org/Sunday", "startTime": "09:00" } },
+        { "@type": "Event", "name": "Sunday Gathering", "startDate": "2026-01-04T11:00", "eventSchedule": { "@type": "Schedule", "byDay": "https://schema.org/Sunday", "startTime": "11:00" } }
+      ]
+    }
+    </script>
+</head>
+<body>
+    <!-- ===== Header / Nav ===== -->
+    <header class="site-header" id="top">
+        <div class="wrap nav">
+            <a href="#top" class="brand">
+                <svg class="brand-mark" aria-hidden="true" viewBox="0 0 100 100" width="18" height="18"><path d="M50 4 C26 4 14 26 14 48 L14 96 L34 96 L34 50 C34 34 40 22 50 22 C60 22 66 34 66 50 L66 96 L86 96 L86 48 C86 26 74 4 50 4 Z" fill="currentColor"/></svg>
+                <span class="brand-name">HAVEN</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">☰</button>
+            <nav class="nav-links" id="navLinks" aria-label="Primary">
+                <a href="#finder">Find Your Place</a>
+                <a href="#ministries">Ministries</a>
+                <a href="#team">Team</a>
+                <a href="#give">Give</a>
+                <a href="#visit">Visit</a>
+                <a href="#plan" class="nav-cta">Plan a Visit</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== Hero (three.js light-dust behind) ===== -->
+    <section class="hero" id="hero">
+        <canvas id="heroCanvas" aria-hidden="true"></canvas>
+        <div class="hero-fade" aria-hidden="true"></div>
+        <div class="wrap hero-inner">
+            <p class="eyebrow" data-fx>James Street North · Hamilton · Since 1912</p>
+            <h1 class="display" data-fx data-fx-delay="80">Come As<br><span class="gold">You Are.</span></h1>
+            <p class="lede" data-fx data-fx-delay="160">A church in the heart of the city — honest teaching, real community, and a seat that's already yours. Sundays at 9 &amp; 11.</p>
+            <div class="hero-actions" data-fx data-fx-delay="240">
+                <a class="btn btn-primary" href="#plan" data-magnetic>Plan a Visit</a>
+                <a class="btn btn-ghost" href="#finder" data-magnetic>Find Your Place</a>
+            </div>
+        </div>
+        <div class="marquee" aria-hidden="true">
+            <div class="marquee-track">
+                <span>Sundays 9 &amp; 11</span><span>·</span><span>Kids at Both Services</span><span>·</span><span>Youth Fridays</span><span>·</span><span>City Table Thursdays</span><span>·</span><span>Small Groups Weekly</span><span>·</span><span>All Welcome</span><span>·</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Stats band ===== -->
+    <section class="stats-band">
+        <div class="wrap stats-row">
+            <div class="stat" data-fx><strong><span data-count-to="114">0</span></strong><span>Years on James North</span></div>
+            <div class="stat" data-fx data-fx-delay="80"><strong><span data-count-to="12000">0</span>+</strong><span>Meals served last year</span></div>
+            <div class="stat" data-fx data-fx-delay="160"><strong><span data-count-to="340">0</span></strong><span>Kids &amp; youth each week</span></div>
+            <div class="stat" data-fx data-fx-delay="240"><strong><span data-count-to="40">0</span>+</strong><span>Small groups across the city</span></div>
+        </div>
+    </section>
+
+    <!-- ===== Find Your Place (signature feature) ===== -->
+    <section id="finder" class="section">
+        <div class="wrap">
+            <div class="section-head" data-fx>
+                <p class="eyebrow">Start Here</p>
+                <h2 class="display-sm">Find Your Place</h2>
+                <p class="section-sub">Tell us who you are — we'll show you where you already belong.</p>
+            </div>
+            <div class="finder-chips" id="finderChips" aria-label="I'm coming…" data-fx></div>
+            <p class="finder-note" id="finderNote" data-fx></p>
+            <div class="finder-results" id="finderResults" aria-live="polite"></div>
+        </div>
+    </section>
+
+    <!-- ===== Ministries ===== -->
+    <section id="ministries" class="section section-dark">
+        <div class="wrap">
+            <div class="section-head" data-fx>
+                <p class="eyebrow">The Life of the Church</p>
+                <h2 class="display-sm">Eight Doors In</h2>
+                <p class="section-sub">Every ministry is open to everyone — no membership required, ever.</p>
+            </div>
+            <div class="ministries-grid" id="ministriesGrid"></div>
+        </div>
+    </section>
+
+    <!-- ===== Team ===== -->
+    <section id="team" class="section cv-auto">
+        <div class="wrap">
+            <div class="section-head" data-fx>
+                <p class="eyebrow">The Team</p>
+                <h2 class="display-sm">Shepherds, Not Celebrities</h2>
+            </div>
+            <div class="team-grid" id="teamGrid"></div>
+        </div>
+    </section>
+
+    <!-- ===== Sanctuary strip ===== -->
+    <section class="space-strip cv-auto" aria-label="The sanctuary">
+        <div class="space-img" id="spaceImg" data-parallax></div>
+        <div class="wrap space-copy">
+            <p class="eyebrow" data-fx>The Sanctuary</p>
+            <h2 class="display-sm" data-fx data-fx-delay="80">Built 1912. Alive Sunday.</h2>
+            <p data-fx data-fx-delay="160">Stone arches, oak pews, and morning light that does half the preaching. Some rooms make you lower your voice — this one raises it.</p>
+        </div>
+    </section>
+
+    <!-- ===== Giving ===== -->
+    <section id="give" class="section section-dark cv-auto">
+        <div class="wrap">
+            <div class="section-head" data-fx>
+                <p class="eyebrow">Giving</p>
+                <h2 class="display-sm">Generosity Builds This House</h2>
+                <p class="section-sub">Every dollar stays accountable — audited annually, reported to the congregation.</p>
+            </div>
+            <div class="rates-grid" id="givingGrid"></div>
+            <p class="rates-fineprint" data-fx>Tax receipts issued for all donations · HAVEN Church is a registered Canadian charity · Giving is never a condition of belonging</p>
+        </div>
+    </section>
+
+    <!-- ===== Stories ===== -->
+    <section class="section cv-auto">
+        <div class="wrap">
+            <div class="section-head" data-fx>
+                <p class="eyebrow">Stories</p>
+                <h2 class="display-sm">What People Find Here</h2>
+            </div>
+            <div class="reviews-grid" id="storiesGrid"></div>
+        </div>
+    </section>
+
+    <!-- ===== Plan a Visit form ===== -->
+    <section id="plan" class="section section-tint cv-auto">
+        <div class="wrap">
+            <div class="section-head" data-fx>
+                <p class="eyebrow">Plan a Visit</p>
+                <h2 class="display-sm">We'll Save You a Seat</h2>
+                <p class="section-sub">Tell us you're coming and someone will meet you at the door — no name tags, no spotlight, no pressure.</p>
+            </div>
+            <form id="planForm" class="visit-form" data-fx>
+                <input type="checkbox" name="botcheck" class="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required autocomplete="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required autocomplete="email">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="party">I'm Coming…</label>
+                        <select id="party" name="party">
+                            <option value="On my own">On my own</option>
+                            <option value="With kids">With kids</option>
+                            <option value="With my family">With my family</option>
+                            <option value="With a friend">With a friend</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Which Service</label>
+                        <select id="service" name="service">
+                            <option value="Sunday 9 AM">Sunday 9 AM</option>
+                            <option value="Sunday 11 AM">Sunday 11 AM</option>
+                            <option value="Not sure yet">Not sure yet</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="interest">Curious About <span class="optional">(optional)</span></label>
+                    <select id="interest" name="interest"></select>
+                </div>
+                <div class="form-group">
+                    <label for="notes">Anything We Should Know? <span class="optional">(optional)</span></label>
+                    <textarea id="notes" name="notes" rows="3" placeholder="Accessibility needs, questions about kids check-in, anything at all…"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block" data-magnetic>Save My Seat</button>
+                <p id="planNote" class="form-note">We reply within a day. Your info stays with us — full stop.</p>
+            </form>
+        </div>
+    </section>
+
+    <!-- ===== Visit / Times / Map ===== -->
+    <section id="visit" class="section section-dark cv-auto">
+        <div class="wrap">
+            <div class="section-head" data-fx>
+                <p class="eyebrow">Visit</p>
+                <h2 class="display-sm">On James, Under the Steeple</h2>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-card" data-fx>
+                    <h3>Gatherings</h3>
+                    <p>
+                        Sundays: 9:00 &amp; 11:00 AM<br>
+                        City Table: Thu 5:30 PM<br>
+                        Youth: Fri 7:00 PM<br>
+                        Office: Tue–Fri 9 AM – 4 PM
+                    </p>
+                </div>
+                <div class="contact-card" data-fx data-fx-delay="80">
+                    <h3>Location</h3>
+                    <p>
+                        210 James St N<br>
+                        Hamilton, ON<br>
+                        L8R 2L2<br>
+                        Free parking behind the building
+                    </p>
+                </div>
+                <div class="contact-card" data-fx data-fx-delay="160">
+                    <h3>Contact</h3>
+                    <p>
+                        <strong>Phone:</strong> (905) 555-1912<br>
+                        <strong>Email:</strong> hello@havenchurch.ca<br>
+                        <strong>Instagram:</strong> @haven.hamont
+                    </p>
+                </div>
+            </div>
+            <div class="map-embed" data-fx>
+                <div class="map-fallback" aria-hidden="true">
+                    <p><strong>HAVEN Church</strong><br>210 James St N, Hamilton, ON</p>
+                    <a class="btn btn-ghost" href="https://www.google.com/maps?q=210+James+St+N,+Hamilton,+ON" target="_blank" rel="noopener">Open in Google Maps</a>
+                </div>
+                <iframe src="https://www.google.com/maps?q=210+James+St+N,+Hamilton,+ON&output=embed" title="Map to HAVEN Church, 210 James St N, Hamilton" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer class="footer">
+        <div class="wrap">
+            <div class="footer-content">
+                <p>&copy; 2026 HAVEN Church. Est. 1912 — all welcome, always.</p>
+                <p class="footer-credits">
+                    Built with <strong>PowerStudio</strong> Frameworks •
+                    Photos via <a href="https://pexels.com" target="_blank" rel="noopener">Pexels</a> •
+                    Forms via <a href="https://web3forms.com" target="_blank" rel="noopener">Web3Forms</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== Toast ===== -->
+    <div id="toast" class="toast" hidden role="status" aria-live="polite"></div>
+
+    <script src="app.js"></script>
+    <script src="fx.js"></script>
+    <script type="module" src="three-scene.js"></script>
+</body>
+</html>
